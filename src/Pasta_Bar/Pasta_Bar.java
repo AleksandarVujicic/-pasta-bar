@@ -46,4 +46,33 @@ public class Pasta_Bar {
 		isRegular = false;
 		return isRegular;
 	}
+	public static void menu() {
+
+		System.out.println("Welcome to pasta bar, please take a look at our menu and choose your ingredients.");
+		System.out.println("");
+
+		System.out.println("MENU");
+		System.out.println("INGREDIENT                              PRICE");
+		System.out.println("Macaroni________________________________50");
+		System.out.println("Spaghetti_______________________________60");
+		System.out.println("Bolognese_______________________________120");
+		System.out.println("Turkey__________________________________120");
+		System.out.println("Beef____________________________________140");
+		System.out.println("Bacon___________________________________100");
+		System.out.println("Chicken_________________________________100");
+		System.out.println("4 Cheeses_______________________________100");
+		System.out.println("Smocked Cheese__________________________80");
+		System.out.println("Parmesan________________________________50");
+		System.out.println("Sour Creme______________________________80");
+		System.out.println("Pesto Sauce_____________________________80");
+		System.out.println("Napolitana______________________________80");
+		System.out.println("Vegetable Mix___________________________50");
+		System.out.println("Mushroom________________________________50");
+		System.out.println("Box_____________________________________20");
+		System.out.println("");
+		System.out.println("Type 'Order' when you are ready to finish your purchase.");
+		System.out.println("");
+
+	}
 }
+
