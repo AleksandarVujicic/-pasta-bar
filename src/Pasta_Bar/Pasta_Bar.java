@@ -1,8 +1,57 @@
 package Pasta_Bar;
 
+import java.util.Scanner;
+
 public class Pasta_Bar {
 
 	public static void main(String[] args) {
+		
+		Scanner s = new Scanner(System.in);
+
+		String ingredient = "";
+		int price = 0;
+		double totalPrice = 0;
+		String phone = "";
+
+		String[] ingredients = { "Macaroni", "Spaghetti", "Bolognese", "Turkey", "Beef", "Bacon", "Chicken",
+				"4 Cheeses", "Smoked Cheese", "Parmesan", "Sour Creme", "Pesto Sauce", "Napolitana", "Vegetable Mix",
+				"Mushroom", "Box" };
+		int[] prices = { 50, 60, 120, 120, 140, 100, 100, 100, 80, 50, 80, 80, 80, 50, 50, 20 };
+		String[] Regulars = { "0631111111", "0632222222", "0633333333", "0644444444", "0655555555", "0666666666" };
+
+		menu();
+
+		while (!OrderCompleted(ingredient)) {
+
+			System.out.print("Add your next ingredient: ");
+			ingredient = s.nextLine();
+			if (!OrderCompleted(ingredient)) {
+
+				int index = findIndex(ingredients, ingredient);
+
+				if (nonexistentIngredient(ingredients, ingredient)) {
+					System.out.println("Please use just ingredients from the menu.");
+				} else {
+					totalPrice = totalPrice + prices[index];
+				}
+			}
+		}
+
+		System.out.print("Enter your phone number please: ");
+		phone = s.next();
+		System.out.println("");
+		if (isRegular(Regulars, phone)) {
+			totalPrice = discount(totalPrice);
+			System.out.println("Thank you for ordering, your bill is: " + totalPrice);
+			;
+
+		} else {
+
+			System.out.println("Thank you for ordering, your bill is: " + totalPrice);
+			System.out.println("");
+			System.out.println("If you become a regular, you can be eligable for 10% discount on all of your orders.");
+
+		}
 
 	}
 
